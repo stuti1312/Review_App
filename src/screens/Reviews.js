@@ -1,10 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity, Text, View } from 'react-native'
 import React from 'react'
+import { globalStyles } from '../styles/global'
 
-const Reviews = () => {
+const Reviews = ({navigation}) => {
   return (
-    <View>
-      <Text>Reviews</Text>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.mainHedaing}>Reviews</Text>
+      <TouchableOpacity onPress={()=>navigation.push("review")}>
+          <Text>Push Review details</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={()=>navigation.goBack()}>
+          <Text>GO BACK</Text>
+      </TouchableOpacity>
     </View>
   )
 }
