@@ -4,14 +4,13 @@ import {globalStyles} from '../styles/global';
 
 const Home = ({navigation}) => {
   const [reviews, setReviews] = useState([
-    {title: 'abcd', rating: 5, body: 'lorem ipsum', key: '1'},
-    {title: 'ABCD', rating: 3, body: 'ipsum', key: '2'},
-    {title: 'xyz', rating: 4, body: 'lorem', key: '3'},
-    {title: 'XYZ', rating: 2, body: 'ipsum lorem', key: '4'},
+    {title: 'IJKLMNOP', rating: 5, body: 'lorem ipsum', key: '1'},
+    {title: 'ABCDEFGH', rating: 3, body: 'ipsum', key: '2'},
+    {title: 'QRSTUVWX', rating: 4, body: 'lorem', key: '3'},
+    {title: 'YZABCDEF', rating: 2, body: 'ipsum lorem', key: '4'},
   ]);
   return (
     <View style={globalStyles.container}>
-      <Text style={globalStyles.mainHeading}>Home</Text>
       <FlatList
         data={reviews}
         renderItem={({item}) => (

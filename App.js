@@ -1,44 +1,16 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import HomeNavigators from './src/navigators/HomeNavigators';
 
-import Home from './src/screens/Home';
-import Reviews from './src/screens/Reviews';
-import About from './src/screens/About';
-
-const Stack = createNativeStackNavigator();
+// for ignoring gesture handler warning---- START
+import {LogBox} from 'react-native';
+LogBox.ignoreLogs([
+  "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
+]);
+// ----- END
 
 const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="home"
-          component={Home}
-          options={{
-            title: 'HOME PAGE',
-            headerStyle: {backgroundColor: 'lightgray'},
-          }}
-        />
-        <Stack.Screen
-          name="review"
-          component={Reviews}
-          options={{
-            title: 'REVIEW DETAILS',
-            headerStyle: {backgroundColor: 'lightgray'},
-          }}
-        />
-        <Stack.Screen
-          name="about"
-          component={About}
-          options={{
-            title: 'ABOUT PAGE',
-            headerStyle: {backgroundColor: 'lightgray'},
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  return <HomeNavigators />;
 };
 
 export default App;
