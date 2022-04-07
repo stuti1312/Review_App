@@ -1,15 +1,15 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import About from '../screens/About';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="About" component={About} />
-    </Stack.Navigator>
+    <Drawer.Navigator>
+      <Drawer.Screen name="About" component={About} />
+    </Drawer.Navigator>
   );
 };
 

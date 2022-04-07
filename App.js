@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import HomeNavigators from './src/navigators/HomeNavigators';
+
+import AuthStack from './src/navigators/AuthStack';
 
 // for ignoring gesture handler warning---- START
 import {LogBox} from 'react-native';
@@ -10,7 +11,10 @@ LogBox.ignoreLogs([
 // ----- END
 
 const App = () => {
-  return <HomeNavigators />;
+  return (
+    // <HomeNavigators />
+    <AuthStack />
+  );
 };
 
 export default App;

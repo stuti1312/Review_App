@@ -1,5 +1,6 @@
-import {TouchableOpacity, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import React from 'react';
+
 import {globalStyles} from '../styles/global';
 
 const Reviews = ({navigation, route}) => {
