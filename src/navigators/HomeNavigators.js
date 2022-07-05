@@ -9,9 +9,41 @@ const RootDrawer = createDrawerNavigator();
 const HomeNavigators = () => {
   return (
     <NavigationContainer>
-      <RootDrawer.Navigator>
-        <RootDrawer.Screen name="HomeStack" component={HomeStack} />
-        <RootDrawer.Screen name="HomeDrawer" component={DrawerNavigator} />
+      <RootDrawer.Navigator
+        screenOptions={{
+          headerShown: true,
+          swipeEnabled: true,
+          gestureEnabled: true,
+          headerTitleAlign: 'center',
+          headerStyle: {backgroundColor: '#0080ff'},
+          headerTintColor: '#ffffff',
+          headerTitleStyle: {fontSize: 25, fontWeight: 'bold'},
+        }}
+        initialRouteName="HomeStack"
+        drawerPosition="right"
+        drawerType="front"
+        edgeWidth={100}
+        hideStatusBar={false}
+        overlayColor="skyblue"
+        drawerStyle={{backgroundColor: 'pink', width: 250}}>
+        <RootDrawer.Screen
+          name="HomeStack"
+          component={HomeStack}
+          options={{
+            title: 'The HOMESTACK',
+            // drawerIcon: ({focused}) => (
+            //   <FontAwesome
+            //     size={focused ? 25 : 20}
+            //     color={focused ? 'red' : 'pink'}
+            //   />
+            // ),
+          }}
+        />
+        <RootDrawer.Screen
+          name="HomeDrawer"
+          component={DrawerNavigator}
+          options={{title: 'The DRAWERSTACK'}}
+        />
       </RootDrawer.Navigator>
     </NavigationContainer>
   );
